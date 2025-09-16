@@ -1,46 +1,41 @@
+// Filters
+const chips = document.querySelectorAll('.chip');
+const cards = document.querySelectorAll('.project');
+const search = document.getElementById('searchInput');
 
-// filters, search, and modal behavior
-(function(){
-  const chips = document.querySelectorAll('.chip');
-  const cards = [...document.querySelectorAll('.card')];
-  const search = document.getElementById('search');
-
-  function apply(){
-    const active = document.querySelector('.chip.active')?.dataset.filter || 'all';
-    const q = (search?.value || '').toLowerCase().trim();
-    cards.forEach(card => {
-      const tags = (card.dataset.tags || '').toLowerCase();
-      const text = card.textContent.toLowerCase();
-      const tagMatch = active==='all' ? true : tags.includes(active);
-      const qMatch = q ? text.includes(q) : true;
-      card.style.display = (tagMatch && qMatch) ? '' : 'none';
-    });
-  }
-
-  chips.forEach(ch => ch.addEventListener('click', () => {
-    chips.forEach(c => c.classList.remove('active'));
-    ch.classList.add('active');
-    chips.forEach(c => c.setAttribute('aria-selected', c===ch ? 'true':'false'));
-    apply();
-  }));
-  search && search.addEventListener('input', apply);
-
-  // Modal
-  const backdrop = document.getElementById('backdrop');
-  function openModal(id){
-    const dlg = document.getElementById('modal-'+id);
-    if(!dlg) return;
-    dlg.classList.add('show');
-    backdrop.classList.add('show');
-  }
-  function closeAll(){
-    document.querySelectorAll('.modal').forEach(m=>m.classList.remove('show'));
-    backdrop.classList.remove('show');
-  }
-  document.querySelectorAll('[data-modal]').forEach(btn => {
-    btn.addEventListener('click', () => openModal(btn.dataset.modal));
+function applyFilter() {
+  const active = document.querySelector('.chip.active')?.dataset.filter || 'all';
+  const term = (search?.value || '').toLowerCase();
+  cards.forEach(c => {
+    const tags = c.dataset.tags || '';
+    const text = c.innerText.toLowerCase();
+    const byTag = (active === 'all') || tags.includes(active);
+    const bySearch = !term || text.includes(term);
+    c.style.display = (byTag && bySearch) ? '' : 'none';
   });
-  document.querySelectorAll('[data-close]').forEach(btn => btn.addEventListener('click', closeAll));
-  backdrop && backdrop.addEventListener('click', closeAll);
-  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeAll(); });
-})();
+}
+chips.forEach(ch => ch.addEventListener('click', () => {
+  chips.forEach(x => x.classList.remove('active'));
+  ch.classList.add('active');
+  applyFilter();
+}));
+search && search.addEventListener('input', applyFilter);
+
+// Modals
+const openBtns = document.querySelectorAll('[data-open]');
+const closeBtns = document.querySelectorAll('[data-close]');
+const backdrop = document.getElementById('modal-backdrop');
+
+openBtns.forEach(b => b.addEventListener('click', () => {
+  const target = document.querySelector(b.getAttribute('data-open'));
+  target?.classList.add('show');
+  backdrop?.classList.add('show');
+  target?.querySelector('.close')?.focus();
+}));
+function closeAll(){
+  document.querySelectorAll('.modal.show').forEach(m => m.classList.remove('show'));
+  backdrop?.classList.remove('show');
+}
+closeBtns.forEach(b => b.addEventListener('click', closeAll));
+backdrop?.addEventListener('click', closeAll);
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeAll(); });

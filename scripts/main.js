@@ -1,8 +1,6 @@
-
-// global interactions + language toggle
 (function(){
   const stored = (function(){ try { return localStorage.getItem('lang'); } catch(e){ return null; }})();
-  const initial = stored || (navigator.language && navigator.language.startsWith('es') ? 'es' : 'en');
+  const initial = stored || 'en';   // EN por defecto
   setLanguage(initial);
 
   const enBtn = document.getElementById('lang-en');

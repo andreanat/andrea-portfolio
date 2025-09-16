@@ -1,16 +1,14 @@
-/* ====== PALETA (blanco + navy + vino) ====== */
 :root{
-  --navy:#0b1c39;        /* títulos, nav, énfasis */
-  --wine:#a0192f;        /* acentos y detalles */
-  --bg:#ffffff;          /* fondo base */
-  --surface:#f7f7fa;     /* bloques claros alternos */
-  --text:#111111;        /* texto principal */
-  --muted:#5b5b5b;       /* texto secundario */
-  --line:#e5e7eb;        /* líneas y bordes sutiles */
-
+  --navy:#09142a;      /* MÁS oscuro = mejor contraste */
+  --wine:#8e1126;      /* rojo vino más profundo */
+  --bg:#f5f7fc;        /* fondo ligeramente gris-azul para separar */
+  --surface:#ffffff;   /* tarjetas/blancos */
+  --text:#0c0f14;      /* casi negro */
+  --muted:#3b4250;     /* secundario más contrastado */
+  --line:#d4d7df;      /* borde visible */
   --radius:16px;
-  --shadow:0 10px 34px rgba(0,0,0,.10);
-  --s1:8px; --s2:16px; --s3:24px; --s4:40px; --s5:64px;
+  --shadow:0 12px 36px rgba(0,0,0,.12);
+  --s1:8px; --s2:16px; --s3:24px; --s4:40px; --s5:64px;  /* escala 8px */
 }
 
 /* ====== BASE ====== */
@@ -79,18 +77,22 @@ section.section-alt{ background:var(--surface); border-top:1px solid var(--line)
 
 .card-btn{
   display:flex; align-items:center; justify-content:space-between; gap:12px;
-  padding:28px; background:#fff; border:2px solid var(--line);
-  border-radius:var(--radius); box-shadow:var(--shadow);
+  padding:28px;
+  background:var(--surface);
+  border:2px solid var(--line);          /* borde más grueso */
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
   transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
 .card-btn:hover{
   transform: translateY(-6px);
   border-color: var(--navy);
-  box-shadow: 0 16px 40px rgba(0,0,0,.14);
+  box-shadow: 0 18px 46px rgba(0,0,0,.16);
   text-decoration:none;
 }
-.card-btn:focus{ outline:3px solid var(--wine); outline-offset:3px }
-.card-btn .arrow{ font-size:2rem; color:var(--wine); opacity:.9; }
+.card-btn > div:first-child { text-transform:uppercase; font-weight:900; letter-spacing:.5px; }
+.card-btn .subtitle{ color:var(--muted); text-transform:none; }
+.card-btn .arrow{ font-size:2rem; color:var(--wine); opacity:.95; }
 
 /* ====== BOTONES ====== */
 .btn{
@@ -114,12 +116,12 @@ footer{
   outline:3px solid var(--wine); outline-offset:3px;
 }
 @media (prefers-reduced-motion: reduce){ *{transition:none !important} }
+
 /* ====== Revista – Enhancers globales ====== */
-/* 1) Titulares más dramáticos */
 h1{ font-size: clamp(3.5rem, 9vw, 6rem); letter-spacing:-1px; }
 h2{ letter-spacing:-.6px; }
 
-/* 2) Bloques alternos tipo revista (aplícalo con class="section-alt") */
+/* 2) Bloques alternos tipo revista */
 section.section-alt{
   background: var(--surface);
   padding: 80px 0;
@@ -127,14 +129,14 @@ section.section-alt{
   border-bottom: 2px solid var(--line);
 }
 
-/* 3) Grid editorial 12 columnas (aplícalo con class="mag-grid") */
+/* 3) Grid editorial 12 columnas (si lo usas en otras páginas) */
 .mag-grid{
   display:grid; grid-template-columns:repeat(12,1fr); gap:24px;
 }
 .mag-grid > *{ grid-column: span 6; }
 @media (max-width: 900px){ .mag-grid > *{ grid-column: span 12; } }
 
-/* 4) Hero tipo “cover” con overlay (aplícalo con class="hero-cover") */
+/* 4) Hero tipo cover (si usas imagen de fondo en otras páginas) */
 .hero-cover{
   position:relative; color:#fff; padding:120px 40px;
   background: url('./images/hero-cover.jpg') center/cover no-repeat;
@@ -144,7 +146,7 @@ section.section-alt{
 }
 .hero-cover > *{ position:relative; z-index:1; }
 
-/* 5) Cita tipo “pull quote” (usa <aside class="pull-quote">) */
+/* 5) Pull quote editorial */
 .pull-quote{
   font-family:"Playfair Display", serif;
   font-style:italic; font-size:2rem; line-height:1.3;
@@ -153,7 +155,14 @@ section.section-alt{
   border-top:2px solid var(--line); border-bottom:2px solid var(--line);
   padding:20px 0;
 }
-
 .decor-star{ color:var(--wine); font-size:2rem; margin:0 8px; }
 
-:focus-visible{ outline:4px solid var(--wine); outline-offset:4px; }
+/* Hero editorial con bloque oscuro */
+.hero--banner{
+  background: var(--navy);
+  color:#fff;
+  padding: 96px 0 72px;
+  border-bottom: 2px solid var(--line);
+}
+.hero--banner h1{ color:#fff }
+.hero--banner .lead{ color: rgba(255,255,255,.88) }

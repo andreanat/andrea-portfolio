@@ -24,9 +24,9 @@
 }
 .card img{
   width:100%; aspect-ratio:16/9; object-fit:cover; display:block;
-  filter: grayscale(100%); transition: filter .25s ease, transform .25s ease;
+  filter: grayscale(100%) contrast(1.1); transition: filter .25s ease, transform .25s ease;
 }
-.card:hover img{ filter: grayscale(0%); transform: scale(1.01) }
+.card:hover img{ filter: grayscale(0%) contrast(1); transform: scale(1.01) }
 .card .body{padding:18px 18px 20px}
 .card h3{
   margin:0 0 6px; color:var(--navy); font-weight:900; text-transform:uppercase; letter-spacing:-.3px;
@@ -39,7 +39,7 @@
 .btn.primary{background:var(--navy); color:#fff; border-color:var(--navy)}
 
 /* ====== Modal Editorial ====== */
-.modal-backdrop{ position:fixed; inset:0; background:rgba(11,28,57,.65); display:none; }
+.modal-backdrop{ position:fixed; inset:0; background:rgba(9,20,42,.65); display:none; }
 .modal{
   position:fixed; inset:auto 0 0 0; margin:auto; top:5%;
   width:min(900px, 92%); background:#fff; border-radius:var(--radius);
@@ -54,6 +54,3 @@
 .section{margin:18px 0}
 .section h4{margin:0 0 8px; color:var(--wine); text-transform:uppercase; letter-spacing:.5px}
 .related a{display:block; margin:4px 0; color:var(--navy)}
-/* B/N default y color al hover ya lo tienes; subimos contraste un poco */
-.card img{ filter: grayscale(100%) contrast(1.1); }
-.card:hover img{ filter: grayscale(0%) contrast(1); transform: scale(1.02); }
