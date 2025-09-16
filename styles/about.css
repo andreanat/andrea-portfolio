@@ -1,36 +1,58 @@
-/* ====== ABOUT — estilo editorial ====== */
 .about-wrap{
-  display:grid; grid-template-columns: 1.1fr .9fr; gap:28px; margin:24px 0;
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap:32px;
+  align-items:start;
 }
-@media (max-width: 900px){ .about-wrap{grid-template-columns:1fr} }
+@media (max-width: 960px){
+  .about-wrap{ grid-template-columns: 1fr; }
+}
 
+/* Texto principal */
+.about-copy .lede{
+  font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+  line-height: 1.6;
+  color: var(--text);
+  margin: 0 0 14px;
+}
+.bullets{
+  margin: 8px 0 18px 18px;
+}
+.bullets li{
+  margin: 4px 0;
+  color: var(--text);
+}
+
+/* Línea de contacto minimal */
+.contact-inline{
+  color: var(--muted);
+}
+.contact-inline a{
+  color: var(--navy);
+  text-decoration: none;
+  font-weight: 700;
+}
+.contact-inline a:hover{ text-decoration: underline; }
+
+/* Foto circular con marco editorial */
+.about-photo{
+  display:flex;
+  justify-content:center;
+}
 .headshot{
-  width:360px; max-width:100%; aspect-ratio:1/1; object-fit:cover;
-  border-radius:9999px; border:8px solid #fff; box-shadow: var(--shadow);
-  background:#f0f2f7;
+  width: clamp(260px, 36vw, 360px);
+  height: clamp(260px, 36vw, 360px);
+  object-fit: cover;
+  border-radius: 9999px;
+  border: 10px solid #fff;          /* borde blanco gordito */
+  outline: 2px solid var(--line);   /* filete gris */
+  box-shadow: 0 14px 44px rgba(0,0,0,.18);
 }
 
-.list{margin:0; padding-left:22px; color:var(--text)}
-.list li{margin:8px 0; line-height:1.55}
-
-.kpis{
-  display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:18px;
-}
-@media (max-width: 640px){ .kpis{grid-template-columns:1fr 1fr} }
-
-.kpi{
-  background:#fff; border:2px solid var(--line); border-radius: var(--radius);
-  padding:16px; box-shadow: var(--shadow);
-}
-.kpi .num{
-  color:var(--wine); font-weight:900; text-transform:uppercase;
-  font-size:1.2rem; letter-spacing:.3px; margin-bottom:4px;
-}
-.kpi .txt{ color:var(--muted) }
-
-/* Bloques alternos para ritmo editorial */
-section.section-alt{
+/* Ajustes de la banda para respirar como revista */
+.section-alt{
   background: var(--surface);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  border-top: 2px solid var(--line);
+  border-bottom: 2px solid var(--line);
+  padding: 56px 0;
 }

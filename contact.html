@@ -3,25 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title data-i18n="contact.metaTitle">Contact — Get in touch</title>
-  <meta name="description" content="Contact via form or shortcuts to email and LinkedIn." />
+  <title data-i18n="contact.metaTitle">Contact — Andrea Natalia Munoz Baca</title>
+  <meta name="description" content="Contact information for Andrea Natalia Munoz Baca: email and professional links." />
   <link rel="icon" href="./images/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+  <!-- Ya usas Playfair en otras páginas -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/main.css" />
   <link rel="stylesheet" href="./styles/contact.css" />
 </head>
 <body>
 <a href="#main" class="skip">Skip to content</a>
+
 <header role="banner" aria-label="Site header">
   <div class="container nav">
     <div class="brand"><a href="./" data-i18n="brand.name">Andrea Natalia Munoz Baca</a></div>
     <nav class="menu" aria-label="Primary">
-      <a href="./work.html" data-i18n="nav.work" >Work</a>
-      <a href="./aboutme.html" data-i18n="nav.about" >About</a>
+      <a href="./work.html" data-i18n="nav.work">Work</a>
+      <a href="./aboutme.html" data-i18n="nav.about">About</a>
       <a href="./contact.html" data-i18n="nav.contact" aria-current="page">Contact</a>
-      <a href="./resume.html" data-i18n="nav.resume" >Resume</a>
+      <a href="./resume.html" data-i18n="nav.resume">Resume</a>
       <div class="lang-toggle" role="group" aria-label="Language">
         <button id="lang-en" aria-pressed="false">EN</button>
         <button id="lang-es" aria-pressed="false">ES</button>
@@ -29,44 +31,59 @@
     </nav>
   </div>
 </header>
-<main id="main" class="container">
-  <section class="hero">
-    <h1 data-i18n="contact.title">Contact</h1>
-    <p class="lead" data-i18n="contact.subtitle">Email, LinkedIn, or message form.</p>
+
+<main id="main">
+  <!-- Hero editorial oscuro -->
+  <section class="hero hero--banner">
+    <div class="container">
+      <h1 data-i18n="contact.title">CONTACT</h1>
+    </div>
   </section>
 
-  <section>
-    <form id="contactForm" name="contact" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="contact">
-      <p class="hidden" style="display:none"><label>Don’t fill this out if you're human: <input name="bot-field" /></label></p>
+  <section class="section-alt">
+    <div class="container">
+      <div class="kicker" aria-hidden="true">DIRECT LINE</div>
 
-      <label for="name" data-i18n="contact.name">Name</label>
-      <input id="name" name="name" autocomplete="name" required />
+      <section class="mag-grid contact-grid" aria-label="Direct contact options">
+        <!-- EMAIL -->
+        <article class="contact-card">
+          <h2 class="eyebrow">Email</h2>
+          <a class="big-link" href="mailto:andrea.nmb13@gmail.com">Email me — andrea.nmb13@gmail.com</a>
+        </article>
 
-      <label for="email" data-i18n="contact.email">Email</label>
-      <input id="email" name="email" type="email" autocomplete="email" required />
+        <!-- LINKEDIN -->
+        <article class="contact-card">
+          <h2 class="eyebrow">LinkedIn</h2>
+          <a class="big-link" href="https://www.linkedin.com/in/andrea-natalia-munoz-baca-2ab1a71b9" target="_blank" rel="noopener">/in/andrea-natalia-munoz-baca</a>
+        </article>
 
-      <label for="message" data-i18n="contact.message">Message</label>
-      <textarea id="message" name="message" required></textarea>
+        <!-- GITHUB -->
+        <article class="contact-card">
+          <h2 class="eyebrow">GitHub</h2>
+          <a class="big-link" href="https://github.com/andreanat" target="_blank" rel="noopener">@andreanat</a>
+        </article>
+      </section>
 
-      <div class="actions">
-        <button class="btn primary" type="submit" data-i18n="contact.submit">Send</button>
-        <span class="small" id="status" aria-live="polite"></span>
-      </div>
-      <p class="small" data-i18n="contact.shortcuts">Or email <a href="mailto:andrea@example.com">andrea@example.com</a> or find me on <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>.</p>
-    </form>
+      <!-- Pull quote reducido -->
+      <aside class="pull-quote">
+        Let’s keep it simple.
+      </aside>
+    </div>
   </section>
 </main>
 
 <footer role="contentinfo">
   <div class="container">
-    <div data-i18n="footer.rights">© 2025 Andrea Muñoz — Portfolio.</div>
-    <div><a href="mailto:andrea@example.com">andrea@example.com</a> · <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/andreanat" target="_blank" rel="noopener">GitHub</a></div>
+    <div data-i18n="footer.rights">© 2025 Andrea Natalia Munoz Baca — Portfolio.</div>
+    <div>
+      <a href="mailto:andrea.nmb13@gmail.com">andrea.nmb13@gmail.com</a> ·
+      <a href="https://www.linkedin.com/in/andrea-natalia-munoz-baca-2ab1a71b9" target="_blank" rel="noopener">LinkedIn</a> ·
+      <a href="https://github.com/andreanat" target="_blank" rel="noopener">GitHub</a>
+    </div>
   </div>
 </footer>
 
 <script src="./scripts/i18n.js"></script>
 <script src="./scripts/main.js"></script>
-<script src="./scripts/contact.js"></script>
 </body>
 </html>
