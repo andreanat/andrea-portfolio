@@ -54,3 +54,82 @@
 .section{margin:18px 0}
 .section h4{margin:0 0 8px; color:var(--wine); text-transform:uppercase; letter-spacing:.5px}
 .related a{display:block; margin:4px 0; color:var(--navy)}
+/* Modal media image full width */
+.modal .media {
+  margin: 0 0 14px;
+}
+.modal .media img{
+  width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  display: block;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+}
+.modal .media figcaption{
+  margin-top: 6px;
+  font-size: .9rem;
+  color: var(--muted);
+}
+/* ====== Modal (scroll interno + layout column) ====== */
+.modal-backdrop{
+  position: fixed; inset: 0; background: rgba(9,20,42,.65);
+  display: none;
+}
+
+.modal{
+  position: fixed;
+  left: 50%; top: 5%;
+  transform: translateX(-50%);
+  width: min(920px, 92%);
+  background: #fff;
+  border-radius: var(--radius);
+  border: 2px solid var(--line);
+  box-shadow: var(--shadow);
+  display: none;                  /* oculto por defecto */
+  flex-direction: column;         /* header arriba, content abajo */
+  max-height: 88vh;               /* límite de altura del modal */
+  overflow: hidden;               /* el scroll vive en .content */
+  z-index: 1000;
+}
+
+.modal.show, .modal-backdrop.show{ display: flex; }
+
+.modal header{
+  background:#fff; border-bottom:2px solid var(--line);
+}
+.modal .head{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 18px;
+}
+.modal .head strong{
+  color:var(--navy); text-transform:uppercase; letter-spacing:-.3px
+}
+
+.modal .content{
+  padding:18px 20px 22px;
+  overflow: auto;                 /* << SCROLL AQUÍ */
+  max-height: calc(88vh - 56px);  /* 56px aprox del header */
+}
+
+/* media dentro del modal */
+.modal .media{ margin:0 0 12px }
+.modal .media img{
+  width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  display: block;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+}
+.modal .media figcaption{
+  margin-top:6px; font-size:.9rem; color:var(--muted);
+}
+
+.close{
+  border:0; background:var(--surface); border-radius:10px;
+  padding:8px 12px; cursor:pointer; font-weight:800
+}
+
+/* Evita que la página del fondo se mueva cuando el modal está abierto */
+body.modal-open{ overflow: hidden; }
