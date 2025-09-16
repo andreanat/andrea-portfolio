@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es" data-page="about">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="about.metaTitle">About — Who I am & strengths</title>
+  <meta name="description" content="Short bio, bilingual strengths, crisis comms, policy storytelling, earned media, and tools." />
+  <link rel="icon" href="./images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/main.css" />
+  <link rel="stylesheet" href="./styles/about.css" />
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+<header role="banner" aria-label="Site header">
+  <div class="container nav">
+    <div class="brand"><a href="./" data-i18n="brand.name">Andrea Muñoz</a></div>
+    <nav class="menu" aria-label="Primary">
+      <a href="./work.html" data-i18n="nav.work" >Work</a>
+      <a href="./aboutme.html" data-i18n="nav.about" aria-current="page">About</a>
+      <a href="./contact.html" data-i18n="nav.contact" >Contact</a>
+      <a href="./resume.html" data-i18n="nav.resume" >Resume</a>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button id="lang-en" aria-pressed="false">EN</button>
+        <button id="lang-es" aria-pressed="false">ES</button>
+      </div>
+    </nav>
+  </div>
+</header>
+<main id="main" class="container">
+  <section class="hero">
+    <h1 data-i18n="about.title">About me</h1>
+    <p class="lead" data-i18n="about.subtitle">Bilingual comms, public service focus, measurable impact.</p>
+  </section>
+
+  <section class="about-wrap">
+    <div>
+      <p data-i18n="about.bio1">I craft clear, accurate, and accessible messages for public audiences in English and Spanish.</p>
+      <p data-i18n="about.bio2">Strengths include crisis comms, policy storytelling, earned media, and content ops.</p>
+      <ul class="list">
+        <li data-i18n="about.point1">Bilingual (EN/ES) press notes & briefs</li>
+        <li data-i18n="about.point2">Crisis comms basics & rapid research</li>
+        <li data-i18n="about.point3">Policy comms & media coordination</li>
+        <li data-i18n="about.point4">Analytics mindset & accessibility</li>
+      </ul>
+      <div class="kpis">
+        <div class="kpi"><div class="num">ES/EN</div><div class="txt" data-i18n="about.kpi1">Bilingual outputs</div></div>
+        <div class="kpi"><div class="num">A11y</div><div class="txt" data-i18n="about.kpi2">Inclusive by default</div></div>
+        <div class="kpi"><div class="num">Ops</div><div class="txt" data-i18n="about.kpi3">Templates & kits</div></div>
+      </div>
+    </div>
+    <div>
+      <img class="headshot" src="./images/headshot.jpg" alt="Headshot of Andrea" />
+    </div>
+  </section>
+</main>
+
+<footer role="contentinfo">
+  <div class="container">
+    <div data-i18n="footer.rights">© 2025 Andrea Muñoz — Portfolio.</div>
+    <div><a href="mailto:andrea@example.com">andrea@example.com</a> · <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/andreanat" target="_blank" rel="noopener">GitHub</a></div>
+  </div>
+</footer>
+
+<script src="./scripts/i18n.js"></script>
+<script src="./scripts/main.js"></script>
+</body>
+</html>

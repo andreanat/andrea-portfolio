@@ -1,0 +1,1 @@
+# Andrea Portfolio\n\nStatic, bilingual EN/ES portfolio for comms roles. Edit texts in HTML and messages in `scripts/i18n.js`.\n\n## Run\nOpen `index.html` in a browser or use a local server.\n\n## Deploy\nUse GitHub Pages (Settings → Pages → Branch: main / root).

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es" data-page="work">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="work.metaTitle">Work — Samples & Case Notes</title>
+  <meta name="description" content="Gallery of press, policy, social, and writing samples with measurable outcomes." />
+  <link rel="icon" href="./images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/main.css" />
+  <link rel="stylesheet" href="./styles/work.css" />
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+<header role="banner" aria-label="Site header">
+  <div class="container nav">
+    <div class="brand"><a href="./" data-i18n="brand.name">Andrea Muñoz</a></div>
+    <nav class="menu" aria-label="Primary">
+      <a href="./work.html" data-i18n="nav.work" aria-current="page">Work</a>
+      <a href="./aboutme.html" data-i18n="nav.about" >About</a>
+      <a href="./contact.html" data-i18n="nav.contact" >Contact</a>
+      <a href="./resume.html" data-i18n="nav.resume" >Resume</a>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button id="lang-en" aria-pressed="false">EN</button>
+        <button id="lang-es" aria-pressed="false">ES</button>
+      </div>
+    </nav>
+  </div>
+</header>
+<main id="main" class="container">
+  <section class="hero">
+    <h1 data-i18n="work.title">Selected Work</h1>
+    <p class="lead" data-i18n="work.subtitle">Press notes, policy threads, speeches, and more.</p>
+  </section>
+
+  <div class="toolbar">
+    <div class="chips" role="tablist" aria-label="Filters">
+      <span class="chip active" data-filter="all" role="tab" aria-selected="true" data-i18n="filters.all">All</span>
+      <span class="chip" data-filter="press" role="tab" aria-selected="false">press</span>
+      <span class="chip" data-filter="policy" role="tab" aria-selected="false">policy</span>
+      <span class="chip" data-filter="writing" role="tab" aria-selected="false">writing</span>
+      <span class="chip" data-filter="social" role="tab" aria-selected="false">social</span>
+      <span class="chip" data-filter="code" role="tab" aria-selected="false">code</span>
+    </div>
+    <div class="search"><input id="search" type="search" placeholder="Search…" aria-label="Search projects"></div>
+  </div>
+
+  <section class="grid-work" id="workGrid" aria-live="polite">
+    <!-- Sample Card -->
+    <article class="card" data-tags="press,policy">
+      <img src="./images/projects/project-01-cover.jpg" alt="Cover image of project 1" loading="lazy" decoding="async">
+      <div class="body">
+        <h3>Press Note — Civic Program Launch</h3>
+        <p>Brief summary (2–3 lines). Audience, objective, and measurable outcome.</p>
+        <div class="tags"><span class="tag">press</span><span class="tag">policy</span></div>
+        <div class="actions">
+          <button class="btn primary" data-modal="p1" data-i18n="work.details">Details</button>
+          <a class="btn" href="#" target="_blank" rel="noopener">PDF</a>
+        </div>
+      </div>
+    </article>
+    <!-- Add more cards duplicating the structure above -->
+  </section>
+</main>
+
+<!-- Modal -->
+<div class="modal-backdrop" id="backdrop"></div>
+<dialog class="modal" id="modal-p1">
+  <header class="head">
+    <div><strong>Press Note — Civic Program Launch</strong></div>
+    <button class="close" data-close>×</button>
+  </header>
+  <div class="content">
+    <div class="section">
+      <h4 data-i18n="project.context">Context & Goal</h4>
+      <p>Context of the initiative, target audience, objective.</p>
+    </div>
+    <div class="section">
+      <h4 data-i18n="project.challenges">Challenges</h4>
+      <p>Key constraints (time, approvals, data).</p>
+    </div>
+    <div class="section">
+      <h4 data-i18n="project.strategy">Strategy & Execution</h4>
+      <p>Message, visuals, quotes; distribution plan.</p>
+    </div>
+    <div class="section">
+      <h4 data-i18n="project.outcomes">Outcomes</h4>
+      <ul>
+        <li>Engagement: +__%</li>
+        <li>Media hits: __ outlets</li>
+        <li>Interviews scheduled: __</li>
+      </ul>
+    </div>
+    <div class="section related">
+      <h4 data-i18n="project.media">Related Media Hits</h4>
+      <a href="#" target="_blank" rel="noopener">Outlet 1</a>
+      <a href="#" target="_blank" rel="noopener">Outlet 2</a>
+    </div>
+  </div>
+</dialog>
+
+
+<footer role="contentinfo">
+  <div class="container">
+    <div data-i18n="footer.rights">© 2025 Andrea Muñoz — Portfolio.</div>
+    <div><a href="mailto:andrea@example.com">andrea@example.com</a> · <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/andreanat" target="_blank" rel="noopener">GitHub</a></div>
+  </div>
+</footer>
+
+<script src="./scripts/i18n.js"></script>
+<script src="./scripts/main.js"></script>
+<script src="./scripts/work.js"></script>
+</body>
+</html>
