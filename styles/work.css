@@ -1,43 +1,59 @@
-
+/* ====== Toolbar ====== */
 .toolbar{display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin:24px 0}
 .chips{display:flex; gap:8px; flex-wrap:wrap}
 .chip{
-  padding:6px 10px; background:white; border:1px solid var(--line); border-radius:999px;
-  cursor:pointer; user-select:none;
+  padding:8px 12px; background:#fff; border:2px solid var(--line); border-radius:999px;
+  cursor:pointer; user-select:none; color:var(--text); font-weight:800; text-transform:uppercase;
 }
-.chip.active{ background:var(--color-secondary); color:white; border-color:transparent}
-.search{flex:1; min-width:200px}
+.chip:hover{border-color:var(--navy)}
+.chip.active{ background:var(--wine); color:#fff; border-color:var(--wine)}
+.search{flex:1; min-width:220px}
 .search input{
-  width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:12px; background:white;
+  width:100%; padding:12px 14px; border:2px solid var(--line); border-radius:12px; background:#fff;
 }
-.grid-work{display:grid; gap:16px; grid-template-columns: repeat(3, minmax(0,1fr));}
+
+/* ====== Grid ====== */
+.grid-work{display:grid; gap:20px; grid-template-columns: repeat(3, minmax(0,1fr));}
 @media (max-width: 1024px){ .grid-work{grid-template-columns: repeat(2, minmax(0,1fr));} }
 @media (max-width: 640px){ .grid-work{grid-template-columns: 1fr;} }
-.card{
-  background:white; border:1px solid var(--line); border-radius:16px; overflow:hidden; box-shadow:var(--shadow);
-}
-.card img{width:100%; aspect-ratio:16/9; object-fit:cover; display:block}
-.card .body{padding:14px 16px}
-.card h3{margin:4px 0}
-.tags{display:flex; gap:6px; flex-wrap:wrap; margin-top:8px}
-.tag{font-size:.8rem; border:1px solid var(--line); border-radius:999px; padding:2px 8px; color:var(--muted); background:#f0f5ff}
-.card .actions{display:flex; gap:8px; margin-top:10px; flex-wrap:wrap}
-.btn{border:1px solid var(--line); background:white; padding:8px 12px; border-radius:10px}
-.btn.primary{background:var(--color-primary); color:#fff; border:none}
 
-/* Modal */
-.modal-backdrop{
-  position:fixed; inset:0; background:rgba(15,23,42,.6); display:none;
+/* ====== Card ====== */
+.card{
+  background:#fff; border:2px solid var(--line); border-radius:var(--radius);
+  overflow:hidden; box-shadow:var(--shadow);
 }
+.card img{
+  width:100%; aspect-ratio:16/9; object-fit:cover; display:block;
+  filter: grayscale(100%); transition: filter .25s ease, transform .25s ease;
+}
+.card:hover img{ filter: grayscale(0%); transform: scale(1.01) }
+.card .body{padding:18px 18px 20px}
+.card h3{
+  margin:0 0 6px; color:var(--navy); font-weight:900; text-transform:uppercase; letter-spacing:-.3px;
+}
+.card p{color:var(--muted)}
+.tags{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
+.tag{font-size:.8rem; border:2px solid var(--line); border-radius:999px; padding:2px 10px; color:var(--text); background:var(--surface); font-weight:700}
+.card .actions{display:flex; gap:10px; margin-top:12px; flex-wrap:wrap}
+.btn{border:2px solid var(--line); background:#fff; padding:10px 14px; border-radius:10px; font-weight:800; text-transform:uppercase}
+.btn.primary{background:var(--navy); color:#fff; border-color:var(--navy)}
+
+/* ====== Modal Editorial ====== */
+.modal-backdrop{ position:fixed; inset:0; background:rgba(11,28,57,.65); display:none; }
 .modal{
   position:fixed; inset:auto 0 0 0; margin:auto; top:5%;
-  width:min(880px, 92%); background:white; border-radius:16px; box-shadow:var(--shadow); display:none;
+  width:min(900px, 92%); background:#fff; border-radius:var(--radius);
+  border:2px solid var(--line); box-shadow:var(--shadow); display:none;
 }
-.modal header{position:sticky; top:0; background:white; border-bottom:1px solid var(--line)}
-.modal .head{display:flex; align-items:center; justify-content:space-between; padding:12px 16px}
-.modal .content{padding:16px 18px}
-.close{border:none; background:#eef2ff; border-radius:10px; padding:6px 10px; cursor:pointer}
+.modal header{position:sticky; top:0; background:#fff; border-bottom:2px solid var(--line)}
+.modal .head{display:flex; align-items:center; justify-content:space-between; padding:14px 18px}
+.modal .head strong{color:var(--navy); text-transform:uppercase; letter-spacing:-.3px}
+.modal .content{padding:18px 20px 22px}
+.close{border:0; background:var(--surface); border-radius:10px; padding:8px 12px; cursor:pointer; font-weight:800}
 .modal.show, .modal-backdrop.show{display:block}
-.section{margin:12px 0}
-.section h4{margin:0 0 6px}
-.related a{display:block; margin:4px 0}
+.section{margin:18px 0}
+.section h4{margin:0 0 8px; color:var(--wine); text-transform:uppercase; letter-spacing:.5px}
+.related a{display:block; margin:4px 0; color:var(--navy)}
+/* B/N default y color al hover ya lo tienes; subimos contraste un poco */
+.card img{ filter: grayscale(100%) contrast(1.1); }
+.card:hover img{ filter: grayscale(0%) contrast(1); transform: scale(1.02); }

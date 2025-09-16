@@ -2,7 +2,7 @@
 // i18n dictionary and helpers
 window.__messages = {
   "en": {
-    "brand.name": "Andrea Muñoz",
+    "brand.name": "Andrea Natalia Muñoz Baca",
     "nav.work": "Work",
     "nav.about": "About",
     "nav.contact": "Contact",

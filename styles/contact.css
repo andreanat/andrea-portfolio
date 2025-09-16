@@ -1,11 +1,36 @@
+/* ====== CONTACT — limpio + contrastado ====== */
+form{display:grid; gap:14px; margin:16px 0}
 
-form{display:grid; gap:12px; margin:16px 0}
-label{font-weight:600}
-input, textarea{
-  width:100%; padding:12px; border:1px solid var(--line); border-radius:12px; background:white;
+label{
+  font-weight:900; text-transform:uppercase; letter-spacing:.4px;
+  color:var(--navy);
 }
-input:focus, textarea:focus{outline:3px solid #bfd7ff; border-color:transparent}
-.actions{display:flex; gap:12px; align-items:center}
-.btn{border:1px solid var(--line); background:white; padding:10px 14px; border-radius:12px}
-.btn.primary{background:var(--color-secondary); color:white; border:none}
-.small{color:var(--muted); font-size:.95rem}
+
+input, textarea{
+  width:100%; padding:14px 16px;
+  border:2px solid var(--line); border-radius:12px;
+  background:#fff; color:var(--text);
+}
+input:focus, textarea:focus{
+  outline:3px solid var(--wine); border-color:transparent;
+}
+
+textarea{min-height:140px; resize:vertical}
+
+.actions{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
+
+.btn{
+  border:2px solid var(--line); background:#fff; padding:12px 16px;
+  border-radius:12px; font-weight:900; text-transform:uppercase; color:var(--text);
+  transition: transform .12s ease, border-color .12s ease;
+}
+.btn:hover{ transform: translateY(-2px); border-color:var(--navy) }
+.btn.primary{ background:var(--wine); color:#fff; border-color:var(--wine) }
+
+.small{ color:var(--muted); font-size:.95rem }
+
+/* Tarjeta opcional (si envolviste el form en un bloque) */
+.contact-card{
+  background:#fff; border:2px solid var(--line); border-radius:var(--radius);
+  padding:24px; box-shadow:var(--shadow);
+}

@@ -6,7 +6,9 @@
   <title data-i18n="resume.metaTitle">Resume — PDF</title>
   <meta name="description" content="View or download resume PDF." />
   <link rel="icon" href="./images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/main.css" />
   <link rel="stylesheet" href="./styles/resume.css" />
 </head>
@@ -14,7 +16,7 @@
 <a href="#main" class="skip">Skip to content</a>
 <header role="banner" aria-label="Site header">
   <div class="container nav">
-    <div class="brand"><a href="./" data-i18n="brand.name">Andrea Muñoz</a></div>
+    <div class="brand"><a href="./" data-i18n="brand.name">Andrea Natalia Munoz Baca</a></div>
     <nav class="menu" aria-label="Primary">
       <a href="./work.html" data-i18n="nav.work" >Work</a>
       <a href="./aboutme.html" data-i18n="nav.about" >About</a>
@@ -33,10 +35,15 @@
     <p class="lead" data-i18n="resume.subtitle">View or download the PDF.</p>
   </section>
 
-  <section class="resume-wrap">
-    <p><a class="btn" href="./assets/andrea-munoz-resume.pdf" download data-i18n="resume.download">Download Resume (PDF)</a></p>
+<section class="section-alt">
+  <div class="container">
+    <div class="controls">
+      <a class="btn primary" href="./assets/andrea-munoz-resume.pdf" target="_blank" rel="noopener">Open PDF</a>
+      <a class="btn alt" href="./assets/andrea-munoz-resume.pdf" download>Download</a>
+    </div>
     <iframe title="Resume PDF" src="./assets/andrea-munoz-resume.pdf"></iframe>
-  </section>
+  </div>
+</section>
 </main>
 
 <footer role="contentinfo">
